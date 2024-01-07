@@ -1,34 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import * as React from 'react';
 import './App.css'
+import DrawerAppBar from './shared/DrawerAppBar'
+import { Outlet } from "react-router-dom"
+import Footer from './shared/Footer';
+import LateralBar from './shared/LateralBar';
+
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [open, setOpen] = React.useState(false);
+  
+  const handleClick = () => {
+    setOpen(true);
+  };
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref,
+  ) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='container-app'>
+      <DrawerAppBar handleClick= {handleClick} />
+      <LateralBar />
+      <div className='outlet-container'>
+      <Outlet/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>Compartelo con tus amigos!</Alert>
+      </Snackbar>
+      <Footer />
+    </div>
   )
 }
 
