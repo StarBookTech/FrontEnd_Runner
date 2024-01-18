@@ -1,6 +1,7 @@
 import * as React from 'react';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ShareIcon from '@mui/icons-material/Share';
 import Tooltip from '@mui/material/Tooltip';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
@@ -41,24 +42,33 @@ export default function LateralBar() {
       <div className='icons-list'>
 
         <Tooltip className='icon-item' title="Facebook" placement="right">
-          <FacebookIcon className='iconF' fontSize='large' />
+          <a href='https://www.facebook.com/mensajeriarunner?mibextid=ZbWKwL' target="_blank">
+            <FacebookIcon className='iconF' fontSize='large' />
+          </a>
         </Tooltip>
 
         <Tooltip className='icon-item' title="Instagram" placement="right">
-          <InstagramIcon className='icon-item' fontSize='large' />
+          <a href='https://www.instagram.com/runner_mensajeria.gt?igsh=MXNtbGZpYnRyNWd2Nw==' target="_blank">
+            <InstagramIcon fontSize='large' />
+          </a>
+        </Tooltip>
+
+        <Tooltip className='icon-item' title="WhatsApp" placement="right">
+          <a href='#' target="_blank">
+            <WhatsAppIcon fontSize='large' />
+          </a>
         </Tooltip>
 
       </div>
+
       <div className='div_icon-share'>
         <Tooltip className='icon-share' title="Compartir" placement="right">
-
           <ShareIcon onClick={handleCopiarClick} />
-
         </Tooltip>
 
       </div>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>This is a success message!</Alert>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>Compartelo con tus amigos!</Alert>
       </Snackbar>
     </div>
   );

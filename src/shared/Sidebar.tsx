@@ -64,47 +64,49 @@ const Sidebar: React.FC<{ handleClick: any }> = ({ handleClick }) => {
 
 
                 <div className='btn-sidebar'>
-                    <Link className='btn-slice' to='/home' key="1" >
-                        <a className='label-btn_n'>INICIO</a>
-                    </Link>
+                    <Link className='btn-slice label-btn_n' to='/home' key="1" > INICIO </Link>
                 </div>
 
                 <div className='btn-sidebar'>
-                    <Link className='btn-slice' to='/home' key="1" >
-                        <a className='label-btn_n'>ENVIAR</a>
-                    </Link>
+                    <Link className='btn-slice label-btn_n' to='/home' key="2" > ENVIAR </Link>
                 </div>
 
                 <div className='btn-sidebar'>
-                    <Link className='btn-slice' to='/home' key="1" >
-                        <a className='label-btn_n'>PRECIOS</a>
-                    </Link>
+                    <Link className='btn-slice label-btn_n' to='/shipments' key="3" >PRECIOS </Link>
                 </div>
 
                 <div className='btn-sidebar'>
-                    <Link className='btn-slice' to='/home' key="1" >
-                        <a className='label-btn_n'>TRAKING</a>
-                    </Link>
+                    <Link className='btn-slice label-btn_n' to='/traking' key="4" > TRAKING </Link>
                 </div>
-               
+
+                <div className='btn-sidebar'>
+                    <div className='btn-white_sidebar'>
+                        <a className='label-btn'>INICIAR SESION</a>
+                    </div>
+                </div>
+
+                <div className='btn-sidebar'>
+                    <div className='btn-outline_sidebar'>
+                        <a className='label-btn_r'>REGISTRAR</a>
+                    </div>
+                </div>
+
             </div>
-            
+
             <div className='content-items_sidebar'>
-            <hr className='divider-sideber'/>
+                <hr className='divider-sideber' />
                 <div className='icons-list'>
 
                     <Tooltip className='icon-item' title="Facebook" placement="right">
                         <a href='https://www.facebook.com/mensajeriarunner?mibextid=ZbWKwL' target="_blank">
                             <FacebookIcon className='iconF' fontSize='large' />
                         </a>
-
                     </Tooltip>
 
                     <Tooltip className='iconI' title="Instagram" placement="right">
                         <a href='https://www.instagram.com/runner_mensajeria.gt?igsh=MXNtbGZpYnRyNWd2Nw==' target="_blank">
                             <InstagramIcon fontSize='large' />
                         </a>
-
                     </Tooltip>
 
                 </div>

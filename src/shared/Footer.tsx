@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import logo from '../images/LOGO-RUNNER.png'
-
+import React from 'react'
 
 function Footer() {
     const [count, setCount] = useState(0)
@@ -8,7 +8,7 @@ function Footer() {
     return (
         <section>
         <footer className="top">
-          <img src={logo} width='250' height='auto' />
+          <img src={logo} width='275' height='auto' />
           <div className="links">
             <div>
               <h2>Platform</h2>

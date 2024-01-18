@@ -11,7 +11,7 @@ import Snackbar from '@mui/material/Snackbar';
 
 function App() {
   const [open, setOpen] = React.useState(false);
-  
+
   const handleClick = () => {
     setOpen(true);
   };
@@ -30,17 +30,23 @@ function App() {
   });
 
   return (
-    <div className='container-app'>
-      <DrawerAppBar handleClick= {handleClick} />
-      <LateralBar />
-      <div className='outlet-container'>
-      <Outlet/>
+    <>
+      <div className='container-app'>
+
+        <div className='shared_container'>
+          <LateralBar />
+          <div className='shared_container-bar'>
+              <DrawerAppBar handleClick={handleClick} />
+          </div>
+        </div>
+
+        <Outlet />
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
+          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>Compartelo con tus amigos!</Alert>
+        </Snackbar>
+        <Footer />
       </div>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>Compartelo con tus amigos!</Alert>
-      </Snackbar>
-      <Footer />
-    </div>
+    </>
   )
 }
 
