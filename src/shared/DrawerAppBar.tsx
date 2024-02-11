@@ -6,13 +6,13 @@ import React, { useState, useEffect } from 'react';
 const DrawerAppBar:React.FC<{ handleClick: any}> = ({handleClick}) => {
 
   const [scrolling, setScrolling] = useState(false);
-
-
   const [selectedButton, setSelectedButton] = useState(null);
 
   const clickOptionMenu = (buttonId:any) => {
     setSelectedButton(buttonId);
   };
+
+  const pathActual = window.location.pathname;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,10 +46,10 @@ const DrawerAppBar:React.FC<{ handleClick: any}> = ({handleClick}) => {
 
       <div className="section-rigth">
 
-          <Link to='/home' key="1" id="home" className={`btn-slice label-btn_n ${selectedButton === 'home' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('home')}> INICIO </Link>
-          <Link to='/shipments' key="2" className={`btn-slice label-btn_n ${selectedButton === 'shipments' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('shipments')}> ENVIAR </Link>
-          <Link to='/prices' key="3" className={`btn-slice label-btn_n ${selectedButton === 'prices' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('prices')}> PRECIOS </Link>
-          <Link to='/traking' key="4" className={`btn-slice label-btn_n ${selectedButton === 'traking' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('traking')}> TRAKING </Link>
+          <Link to='/home' key="1" id="home" className={`btn-slice label-btn_n ${selectedButton === 'home' || pathActual ==='/home'? 'option-active' : ''}`} onClick={() => clickOptionMenu('home')}> INICIO </Link>
+          <Link to='/shipments' key="2" className={`btn-slice label-btn_n ${selectedButton === 'shipments' || pathActual ==='/shipments' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('shipments')}> ENVIAR </Link>
+          <Link to='/prices' key="3" className={`btn-slice label-btn_n ${selectedButton === 'prices' || pathActual ==='/prices' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('prices')}> PRECIOS </Link>
+          <Link to='/traking' key="4" className={`btn-slice label-btn_n ${selectedButton === 'traking' || pathActual ==='/traking' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('traking')}> TRAKING </Link>
 
       </div>
     </div>

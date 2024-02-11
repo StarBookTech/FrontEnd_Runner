@@ -57,7 +57,9 @@ body {
   height: 100%;
   padding-left: 70px;
   margin-bottom: 200px;
+  padding-top: 70px;
   z-index: 2;
+  position: relative;
 }
 
 .footer_runner {
@@ -82,6 +84,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   transition: background-color 0.3s ease, opacity 0.3s ease;
+  z-index: 99;
 }
 
 .appbar.scroll {
@@ -122,12 +125,12 @@ body {
 }
 
 .label-btn {
-  color: #00aee7;
+  color: #0059A6;
   font-weight: bold;
 }
 
 .label-btn:hover {
-  color: #00aee7;
+  color: #0059A6;
 }
 
 .btn-outline {
@@ -146,6 +149,7 @@ body {
 .btn-outline:hover {
   box-shadow: 0 1rem 1rem -8px rgba(0, 0, 0, 0.22);
 }
+
 .btn-outline_sidebar {
   display: flex;
   margin: 15px;
@@ -163,7 +167,7 @@ body {
   box-shadow: 0 1rem 1rem -8px rgba(0, 0, 0, 0.22);
 }
 
-.btn-outline-material{
+.btn-outline-material {
   border: 1px solid white;
   margin: 15px;
   font-family: "Montserrat", sans-serif;
@@ -218,7 +222,7 @@ body {
 }
 
 
-.option-active{
+.option-active {
   background-color: white;
   color: #0059A6;
 }
@@ -286,7 +290,7 @@ body {
 
 
 .checkout_container {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .select-checkout {
@@ -294,7 +298,7 @@ body {
 }
 
 /*Inicia Address sends */
-.address1-init .css-zow5z4-MuiGrid-root{
+.address1-init .css-zow5z4-MuiGrid-root {
   opacity: 1;
   transform: none;
   transform-origin: 0px 0px 0px;
@@ -303,7 +307,7 @@ body {
 
 
 
-.address1{
+.address1 {
   display: none;
   opacity: 0;
   transform: scale(0.75, 0.5625);
@@ -312,7 +316,7 @@ body {
   visibility: hidden;
 }
 
-.divider-address{
+.divider-address {
   background-color: #0059A6;
 }
 
@@ -366,6 +370,121 @@ body {
   border: none;
 }
 
+/* Inicio Traking*/
+
+.constainer_traking {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item-traking {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 250px;
+  background-color: transparent;
+  border-radius: 15px;
+}
+
+.traking-slice {
+
+  width: 40px;
+  height: 6px;
+  background-color: transparent;
+}
+
+.icom-traking{
+  margin: 0 auto;
+}
+
+.label-item_traking{
+  color: white;
+  font-weight: bold;
+margin:  15px 0;
+  text-align: center;
+}
+
+.check-traking{
+  display: flex;
+  margin: 0 auto;
+  background-color: #ffffff;
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-active_traking{
+  background-color: transparent;
+}
+
+.icon-check_traking{
+  width: 38px;
+  height: 38px;
+}
+.section-traking_guia{
+  width: 100%;
+  margin-left: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.section-traking{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ 
+}
+
+.states-traking{
+  margin-top: 50px;
+}
+.text-input{
+  color: white;
+}
+
+.box-input_traking{
+  background-color: #f5f5f5;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.detail_traking{
+  display: flex;
+  flex-direction: column;
+  color: #dddddd;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.span_detail{
+  font-weight: bold;
+  margin: 13px;
+}
+
+.text_detail{
+  margin: 5px;
+  font-size: 20px;
+}
+
+.title_traking{
+  margin: 0 auto;
+  color: #ffffff;
+}
+/*Fin Traking*/
+
+.btn-action_auth{
+  color: inherit;
+  color: #0059A6;
+}
+
+.btn-action_auth:hover{
+  text-decoration: underline;
+} 
+
 @media(max-width: 1460px) {
   .section-left {
     display: flex;
@@ -378,9 +497,44 @@ body {
     width: 60%;
     right: 0px;
   }
+  .traking-slice {
+    width: 20px;
+  }
+}
+
+.container-notFound{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.imageNotFound{
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.btn-notFound{
+  margin: 0 auto;
+}
+
+@media(max-width: 1280px) {
+  .traking-slice {
+    width: 10px;
+  }
+  .item-traking {
+    width: 190px;
+  }
 }
 
 @media(max-width: 1150px) {
+  .item-traking {
+    width: 180px;
+  }
+
+  .traking-slice {
+    width: 5px;
+  }
+
   .section-left {
     margin-left: 10px;
     display: flex;
@@ -404,6 +558,52 @@ body {
   .btn-slice {
     width: 100px;
     margin: 15px 5px;
+  }
+
+  .traking-slice {
+    width: 5px;
+  }
+  .item-traking {
+    width: 160px;
+  }
+}
+
+@media(max-width: 950px) {
+  .constainer_traking {
+    flex-direction: column;
+
+  }
+
+  .section-traking{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: all 600ms ease-in-out;
+  }
+  .section-traking_guia{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+  }
+
+  .box-input_traking{
+    margin: 0 auto;
+  }
+
+  .item-traking {
+    width: 200px;
+    height: 200px;
+  }
+
+  .traking-slice {
+    width: 6px;
+    height: 50px;
+  }
+  .container-app {
+    margin-bottom: 220px;
   }
 }
 
@@ -459,11 +659,33 @@ body {
     margin-bottom: 10px;
     color: white;
   }
+  .container-app {
+    margin-bottom: 220px;
+  }
+
+  .imageNotFound{
+    max-width: 700px;
+  }
+}
+
+@media(max-width: 700px) {
+  .imageNotFound{
+    max-width: 500px;
+  }
+}
+
+@media(max-width: 500px) {
+  .imageNotFound{
+    max-width: 420px;
+  }
 }
 
 @media(max-width: 420px) {
   .container-app {
     margin-bottom: 495px;
+  }
+  .imageNotFound{
+    max-width: 420px;
   }
 }
 

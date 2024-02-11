@@ -1,18 +1,15 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import icono from '../../assets/logoAzul.png'
 
 
 
@@ -31,8 +28,8 @@ export default function SignUp() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="md">
-      <Paper  elevation={5}   sx={{ my: { xs: 12, md: 15 }, p: { xs: 5, md: 6 } }}>
+      <Container component="main" maxWidth="md" style={{ transformOrigin: '0 0 0' }}  {...({ timeout: 5000 } )}>
+      <Paper  elevation={5}   sx={{ my: { xs: 12, md: 15 }, p: { xs: 5, md: 6 } }} >
         <CssBaseline />
         <Box
           sx={{
@@ -42,11 +39,9 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <img src={icono} width={250}></img>
           <Typography component="h1" variant="h5">
-            Sign up
+           
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
@@ -96,12 +91,7 @@ export default function SignUp() {
                   variant="standard"
                 />
               </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
+             
             </Grid>
             <Button
               type="submit"
@@ -109,11 +99,11 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+             Registrarte
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/singin" variant="body2">
+                <Link to="/singin" key="1" id="home" className='btn-action_auth' >
                  Iniciar Sesion
                 </Link>
               </Grid>

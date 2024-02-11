@@ -3,7 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -11,19 +11,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import icono from '../../assets/logoAzul.png';
 
-function Copyright(props: any) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -41,8 +31,8 @@ export default function SignIn() {
   return (
     <ThemeProvider theme={defaultTheme}>
       
-      <Container component="main" maxWidth="sm">
-      <Paper elevation={5} sx={{ my: { xs: 12, md: 15 }, p: { xs: 5, md: 6 } }}>
+      <Container component="main" maxWidth="sm" style={{ transformOrigin: '0 0 0' }}  {...({ timeout: 5000 } )}>
+      <Paper elevation={5} sx={{ my: { xs: 12, md: 15 }, p: { xs: 5, md: 6 } }} >
         <CssBaseline />
         <Box
           sx={{
@@ -52,11 +42,9 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <img src={icono} width={250}></img>
           <Typography component="h1" variant="h5">
-            Iniciar Sesión
+            
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -92,12 +80,12 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link to="#" className='btn-action_auth'>
                   ¿Has olvidado tu contraseña?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="/singup" variant="body2">
+                <Link to="/singup" className='btn-action_auth'>
                   {"Registrarse"}
                 </Link>
               </Grid>

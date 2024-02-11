@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -21,10 +22,14 @@ const Sidebar: React.FC<{ handleClick: any }> = ({ handleClick }) => {
         bottom: false,
         right: false,
     });
-
+    const pathActual = window.location.pathname;
 
     const textoACopiar = '¡Texto a copiar!';
+    const [selectedButton, setSelectedButton] = useState(null);
 
+    const clickOptionMenu = (buttonId:any) => {
+      setSelectedButton(buttonId);
+    };
     const handleCopiarClick = async () => {
         try {
             await navigator.clipboard.writeText(textoACopiar);
@@ -64,31 +69,27 @@ const Sidebar: React.FC<{ handleClick: any }> = ({ handleClick }) => {
 
 
                 <div className='btn-sidebar'>
-                    <Link className='btn-slice label-btn_n' to='/home' key="1" > INICIO </Link>
+                    <Link className={`btn-slice label-btn_n ${selectedButton === 'home' || pathActual ==='/home'? 'option-active' : ''}`} to='/home' key="1"  onClick={() => clickOptionMenu('home')} > INICIO </Link>
                 </div>
 
                 <div className='btn-sidebar'>
-                    <Link className='btn-slice label-btn_n' to='/home' key="2" > ENVIAR </Link>
+                    <Link className={`btn-slice label-btn_n ${selectedButton === 'shipments' || pathActual ==='/shipments' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('shipments')} to='/shipments' key="2" > ENVIAR </Link>
                 </div>
 
                 <div className='btn-sidebar'>
-                    <Link className='btn-slice label-btn_n' to='/shipments' key="3" >PRECIOS </Link>
+                    <Link className={`btn-slice label-btn_n ${selectedButton === 'prices' || pathActual ==='/prices' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('prices')} to='/prices' key="3" >PRECIOS </Link>
                 </div>
 
                 <div className='btn-sidebar'>
-                    <Link className='btn-slice label-btn_n' to='/traking' key="4" > TRAKING </Link>
+                    <Link className={`btn-slice label-btn_n ${selectedButton === 'traking' || pathActual ==='/traking' ? 'option-active' : ''}`} onClick={() => clickOptionMenu('traking')} to='/traking' key="4" > TRAKING </Link>
                 </div>
 
                 <div className='btn-sidebar'>
-                    <div className='btn-white_sidebar'>
-                        <a className='label-btn'>INICIAR SESION</a>
-                    </div>
+                <Link to='/singin' key="5" id="home" className={`btn-white_sidebar label-btn`} > INICIAR SESION </Link>
                 </div>
 
                 <div className='btn-sidebar'>
-                    <div className='btn-outline_sidebar'>
-                        <a className='label-btn_r'>REGISTRAR</a>
-                    </div>
+                <Link to='/singup' key="6" id="home" className={`btn-outline_sidebar label-btn_r`} > REGISTRARSE</Link>
                 </div>
 
             </div>

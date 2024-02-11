@@ -11,6 +11,7 @@ import Sends from './pages/sends/Sends.tsx';
 import Prices from './pages/prices/Prices.tsx';
 import SignIn from './pages/auth/SingIn.tsx';
 import SignUp from './pages/auth/SingUp.tsx';
+import NotFound from './shared/NotFound.tsx';
 
 const theme = createTheme({
   palette: {
@@ -37,11 +38,15 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: '/',
+        element: <Home />
+      },
+      {
         path: '/home',
         element: <Home />
       },
       {
-        path: '/traking',
+        path: '/traking/:id?',
         element: <Traking />
       },
       {
@@ -54,6 +59,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '*',
+    element: <NotFound/>
+  }
 
 ])
 

@@ -6,6 +6,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import Tooltip from '@mui/material/Tooltip';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
+import Logo from '../images/LogoRunner.png'
 
 export default function LateralBar() {
   const [open, setOpen] = React.useState(false);
@@ -38,9 +39,9 @@ export default function LateralBar() {
   });
   return (
     <div className='barra-lateral'>
-
+<img src={Logo} className='logo_lateral'></img>
       <div className='icons-list'>
-
+        
         <Tooltip className='icon-item' title="Facebook" placement="right">
           <a href='https://www.facebook.com/mensajeriarunner?mibextid=ZbWKwL' target="_blank">
             <FacebookIcon className='iconF' fontSize='large' />
