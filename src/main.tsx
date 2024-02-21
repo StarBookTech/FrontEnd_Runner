@@ -5,24 +5,15 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from './App.tsx'
 import './index.css'
 import Home from './pages/home/Home.tsx';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Traking from './pages/traking/Traking.tsx';
 import Sends from './pages/sends/Sends.tsx';
 import Prices from './pages/prices/Prices.tsx';
 import SignIn from './pages/auth/SingIn.tsx';
 import SignUp from './pages/auth/SingUp.tsx';
 import NotFound from './shared/NotFound.tsx';
+import ServicesForm from './pages/sends/ServicesForm.tsx';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#2b5aa2',
-      light: '#2b5aa2',
-      dark: '#213765',
-      contrastText: '#FFFFFF',
-    },
-  },
-});
+
 
 const router = createBrowserRouter([
   {
@@ -49,9 +40,9 @@ const router = createBrowserRouter([
         path: '/traking/:id?',
         element: <Traking />
       },
-      {
+    {
         path: '/shipments',
-        element: <Sends />
+        element: <ServicesForm />
       },
       {
         path: '/prices',
@@ -68,9 +59,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
       <RouterProvider router={router} />
-    </ThemeProvider>
 
   </StrictMode>
 )

@@ -7,14 +7,11 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import icono from '../../assets/logoAzul.png'
 
 
 
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
 
 export default function SignUp() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -27,7 +24,6 @@ export default function SignUp() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="md" style={{ transformOrigin: '0 0 0' }}  {...({ timeout: 5000 } )}>
       <Paper  elevation={5}   sx={{ my: { xs: 12, md: 15 }, p: { xs: 5, md: 6 } }} >
         <CssBaseline />
@@ -113,6 +109,5 @@ export default function SignUp() {
        
         </Paper>
       </Container>
-    </ThemeProvider>
   );
 }

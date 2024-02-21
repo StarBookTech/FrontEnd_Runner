@@ -4,7 +4,6 @@ import check from "../../assets/check.png"
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import MopedOutlinedIcon from '@mui/icons-material/MopedOutlined';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 
@@ -77,16 +76,7 @@ function Traking() {
     searchTraking()
   }, []);
 
-  const theme = createTheme({
-    palette: {
-      secondary: {
-        main: '#ffffff',
-        light: '#ffffff',
-        // dark: will be calculated from palette.secondary.main,
-        contrastText: '#ffffff',
-      },
-    },
-  });
+
 
 
   const detail = (
@@ -174,7 +164,6 @@ function Traking() {
     <div className=" constainer_traking">
 
       <div className="section-traking_guia">
-        <ThemeProvider theme={theme}>
           <Box sx={{ display: 'flex', alignItems: 'flex-end' }} className="box-input_traking" color="secondary" >
 
             <MopedOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} color="secondary" className="text-input" fontSize="medium" />
@@ -186,7 +175,6 @@ function Traking() {
             </Button>
             <label>{guiaNum}</label>
           </Box>
-        </ThemeProvider>
       </div>
 
       {stateTraking == 0 ? <>

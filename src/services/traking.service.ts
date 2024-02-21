@@ -1,6 +1,4 @@
-//const HOST = 'https://7dlvv6zq-4210.use2.devtunnels.ms/'
-const HOST = 'http://localhost:4210/'
-//const HOST = 'https://18.234.24.43:4210/'
+import { HOST, searchTraking } from '../constants/constants'
 
 export const readAllClients = async () =>{
    try{
@@ -15,7 +13,7 @@ return error
 
 export const readShipment = async (datos: any) => {
     try {
-      const response = await fetch(`${HOST}api/readShipment`, {
+      const response = await fetch(`${HOST}${searchTraking}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
